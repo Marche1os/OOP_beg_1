@@ -6,23 +6,19 @@ class User:
     last_name = 'lName'
 
 class Message:
-    from_user: User
-    to_user: User
-    type = 'text'
-    description = 'description'
-    chat_id = 0
+    def __init__(self, from_user, to_user, type, description, chat_id):
+        self.from_user = from_user
+        self.to_user = to_user
+        self.type = type
+        self.description = description
+        self.chat_id = chat_id
+
 
 class Chat:
     id = 0
     creator: User
     creation_time = 0
 
-user_1 = User()
-user_1.nickname = 'Alex'
 
-user_2 = User()
-user_2.nickname = 'NotAlex'
-user_2 = user_1
-
-print(user_1.nickname)
-print(user_2.nickname)
+my_message = Message("me", "you", "text", "hey kid", 1)
+print(my_message.description)
